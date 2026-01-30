@@ -60,7 +60,7 @@ def send_email(smtp_server, smtp_port, smtp_username, smtp_password,
                 part.set_payload(attachment.read())
                 encoders.encode_base64(part)
                 filename = os.path.basename(attachment_file)
-                part.add_header('Content-Disposition', f'attachment; filename= {filename}')
+                part.add_header('Content-Disposition', f'attachment; filename={filename}')
                 msg.attach(part)
             print(f'Archivo adjunto añadido: {attachment_file}')
         except Exception as e:
